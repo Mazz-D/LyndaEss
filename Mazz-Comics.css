@@ -304,5 +304,505 @@ address {
 
 pre {
     background: #eee5;
-    font-family: "Courier 10 pitch", Courier;
+    font-family: "Courier 10 pitch", Courier, monospace;
+    font-size: 15px;
+    font-size: 1.5em;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1.6em;
 }
+
+code,
+kbd,
+tt,
+var {
+    font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans, Mono", monospace;
+}
+
+abbr,
+acronym {
+    border-bottom: 1px dotted #667;
+    cursor: help;
+}
+
+mark,
+ins {
+    background: #fff7d3;
+    text-decoration: none;
+}
+
+sup,
+sub {
+    font-size: 75%;
+    height: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    bottom: 1ex;
+}
+
+sub {
+    top: .5ex;
+}
+
+small {
+    font-size: 75%;
+}
+
+big {
+    font-size: 125%;
+}
+
+/*----- Global Layouts -----------*/
+.content-button {
+    padding: .5em 1em;
+    border: 3px solid #b51c37;
+    /*border-radius: 10px;*/
+    font-weight: 600;
+}
+
+a.content-button {
+    color: black;
+    text-decoration: none;
+}
+
+a.content-button:focus,
+a.content-button:hover {
+    background: #b51c39;
+    color: #fffcbd;
+}
+
+/*--------------------------------------------------------------
+Header Styles
+--------------------------------------------------------------*/
+
+.masthead {
+    padding: 1em 0;
+   /* background-color: #d63a25;*/
+    background: linear-gradient(to right, #ff7e5f, #feb47b, #d63d23);
+    position: fixed;
+    top: 0;
+    width: 100%; /* Mazz fixed */
+}
+
+@media screen and (min-width: 25em) {
+    .site-header {
+        -js-display: flex;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }   
+}
+
+.site-branding {
+    margin-right: 1em;
+}
+
+.site-branding a {
+    text-decoration: none;
+}
+
+.site-branding a:focus,
+.site-branding a:hover {
+    text-decoration: underline white;
+}
+
+.icon-mmlogo {
+    -js-display: flex;
+    display: flex;
+    width: .75em;
+    height: .75em;
+    margin-right: .35em;
+    padding: .4em;
+    border: 1px solid white;
+}
+
+.icon-mmlogo svg {
+    width: 100%;
+    height: 100%;
+}
+
+.site-title {
+    font-size: 1.4em;
+}
+
+.site-title a {
+    -js-display: flex;
+    display: flex;
+    align-items: baseline;
+    margin: 0;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+}
+
+/*------------------------------------------
+Mobile-first menu
+-------------------------------------------*/
+
+.multi-level-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.multi-level-nav a {
+    display: block;
+    padding: .6em 0;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid hsla(0, 0%, 100%, .1);
+    transition: all .4s;
+}
+
+.multi-level-nav a:focus,
+.multi-level-nav a:hover {
+    padding-left: 1em;
+    background: white;
+    color: #002257;
+}
+@media screen and (max-width: 25em) {
+    .multi-level-nav li li a {
+        padding-left: 1em;
+    }
+    .multi-level-nav li li a:focus,
+    .multi-level-nav li li a:hover {
+        padding-left: 1.8em;
+    }
+
+    .multi-level-nav ul ul li a:: ::before{
+        margin: 0 .4em 0 -.8em ;
+        content: '–';
+    }
+
+    .dropdown-toggle {
+        display: none;
+    }
+    .multi-level-nav > ul:last-of-type > li:nth-last-child(2) > a {
+        border-bottom: none;
+    }
+    a.reserve {
+        margin-top: .4em;
+        text-align: center;
+        font-weight: 600;
+    }
+    a.reserve:focus,
+    a.reserve:hover {
+        padding-left: 0;
+        background: white;
+        color: #002257;
+}
+ }
+
+ @media screen and (min-width:25em){
+    .multi-level-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .multi-level-nav li {
+        flex: 1 0 auto;
+        position: relative;
+    }
+    .multi-level-nav a {
+        padding-right: 1.4em;
+        border-bottom: none;
+    }
+
+    .multi-level-nav a:focus,
+    .multi-level-nav a:hover {
+        padding-left: 0;
+        background: inherit;
+        color: white;
+        text-decoration: underline;
+    }
+
+    .multi-level-nav ul ul {
+        display: none;
+        position: absolute;
+        z-index: 100;
+    }
+    .multi-level-nav ul ul li {
+        flex: 1 1 auto;
+    }
+    .multi-level-nav ul .toggle-on {
+        display: flex;
+    }
+
+    .dropdown-toggle {
+        margin: 0 -.25em 0 .25em;
+        padding: 0 .25em;
+        border: 0;
+        content: "";
+        text-transform: lowercase; /* Stop screeb readers to read the text as capital letters */
+        background-color: transparent;
+    }
+
+    .dropdown-toggle:after {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 1em;
+        color: white;
+        content: "+";
+        line-height: 1em;
+    }
+
+    .dropdown-toggle:hover,
+    .dropdown-toggle:focus {
+        outline: solid white 1px;
+    }
+    .dropdown-toggle.toggle-on:after {
+        content: "–";
+    }
+
+    .toggle-on{
+        border: 1px solid white;
+        border-top: none;
+    }
+
+    .toggle-on a {
+        padding-left: .8em;
+        background-color: #002257;
+    }
+
+    a.reserve {
+        margin-top: .4em;
+        padding: .2em .5em;
+        border: 1px solid black;
+        border-radius: 5px;
+        transition: none;
+    }
+
+    a.reserve:focus,
+    a.reserve:hover {
+        padding-left: .5em;
+        background: red;
+        color: #002257;
+        text-decoration: none;
+    }
+ }
+
+ /*
+ * jQuery FlexSlider v2.6.1
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 and later license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ *
+ */
+
+/* ====================================================================================================================
+ * RESETS
+ * ====================================================================================================================*/
+ .flex-container a:hover,
+ .flex-slider a:hover {
+    outline: none;
+ }
+
+ .slides,
+ .slides > li,
+ .flex-control-nav,
+ .flex-direction-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+ }
+
+ .flex-pauseplay span {
+    text-transform: capitalize;
+ }
+ /* ====================================================================================================================
+ * BASE STYLES
+ * ====================================================================================================================*/
+
+ .flexslider {
+    margin: 0;
+    padding: 0;
+ }
+
+ .flexslider .slides > li {
+    display: none;
+    -webkit-backface-visibility: hidden;
+ }
+
+ .flexslider .slides img {
+    width: 100%;
+    display: block;
+ }
+
+ .flexslider .slides:after {
+    content: "\0020";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+ }
+
+ html[xmlns] .flexslider .slides {
+    display: block;
+ }
+
+ *html .flexslider.slides {
+    display: block;
+ }
+
+ *html .flexslider .slides {
+    height: 1%;
+ }
+
+ .no-js .flexslider .slides > li:first-child {
+    display: block;
+ }
+
+ /* ====================================================================================================================
+ * DEFAULT THEME
+ * ====================================================================================================================*/
+
+ .flexslider {
+    margin: 00;
+    background: #fff;
+    position: relative;
+    zoom: 1;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
+ }
+ .flexslider .slider {
+    zoom: 1;
+ }
+ .flexslider .slides img {
+    height: auto;
+    -moz-user-select: none;
+ }
+ .flex-viewpoint {
+    max-height: 2000px;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+ }
+ .loading .flex-viewpoint {
+    max-height: 300px;
+ }
+ .carousel li {
+    margin-right: 5px;
+ }
+ .flex-direction-nav {
+    *height: 0;
+ }
+ .flex-direction-nav a {
+    text-decoration: none;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    overflow: hidden;
+    opacity: 0;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+ .flex-control-thumbs img:hover {
+    opacity: 1;
+ }
+ .flex-control-thumbs .flex-active {
+    opacity: 1;
+    cursor: default;
+ }
+
+ /* ====================================================================================================================
+ * RESPONSIVE
+ * ====================================================================================================================*/
+@media screen and (max-width: 860px) {
+    .flex-direction-nav .flex-prev {
+        left: 10px;
+    }
+    .flex-direction-nav.flex-next {
+        opacity: 1;
+        right: 10px;
+    }
+}
+
+/*--------------------------------------------------
+Front page promo area
+---------------------------------------------------*/
+
+.promo-text {
+    box-sizing: border-box;
+}
+
+.promo-title {
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 0 .5em;
+    font-size: 2em;
+    background: hsla(0, 0%, 100%, .75);
+}
+
+.promo-lede {
+    padding: 1em 1em;
+    font-size: 1.4em;
+    color: #fffced;
+    text-shadow:1px 1px 3px hsla(277,47%,40%, .85);
+    background: hsla(277, 47%, 66%, .85);
+}
+
+@media screen and (min-width: 600px) {
+    .promo-area {
+        position: relative;
+        max-height: 20em;
+        overflow: hidden;
+    }
+    .promo-content {
+        position:absolute;
+        -js-display:flex;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+    
+    .promo-text {
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 0 12.5%;
+        max-width: 52em;
+    }
+
+    .promo-lede {
+        margin-top: -.5em;
+        margin-left: 20%;
+        text-align: right;
+        width: 70%;
+    }
+}
+
+
