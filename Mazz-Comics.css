@@ -385,7 +385,7 @@ Header Styles
     padding: 1em 0;
    /* background-color: #d63a25;*/
     background: linear-gradient(to right, #ff7e5f, #feb47b, #d63d23);
-    position: fixed;
+   /* position: fixed;
     top: 0;
     width: 100%; /* Mazz fixed */
 }
@@ -476,7 +476,7 @@ Mobile-first menu
         padding-left: 1.8em;
     }
 
-    .multi-level-nav ul ul li a:: ::before{
+    .multi-level-nav ul ul li a::before{
         margin: 0 .4em 0 -.8em ;
         content: '–';
     }
@@ -805,4 +805,304 @@ Front page promo area
     }
 }
 
+/*-----------------------------------------------------
+Front page styles
+-----------------------------------------------------*/
 
+.main-pitch {
+    background: white;
+}
+.featured-image {
+    margin: 2em auto;
+    width: 70%;
+}
+.featured-image figcaption {
+    margin-top: 1em;
+    padding-right: 30%;
+    padding-left: 1em;
+    font-style: italic;
+
+    color: grey;
+    border-left: 2px solid grey;
+}
+
+.main-title{
+    font-size: 2.2em;
+    text-align: center;
+}
+.teaser {
+    padding: 0 1em;
+    font-size: 1.2em;
+}
+
+/* Three Reasons */
+.three-reasons {
+    margin: 2em -1em;
+    padding: 0;
+    background: white;
+}
+
+.reason figcaption {
+    padding: 0 3em;
+}
+
+@media sreen and (min-width: 50em) {
+    .three-reasons {
+        -js-display: flex;
+        display: flex;
+        margin: 1em auto 0;
+    }
+
+    .reason figcaption {
+        padding: 2em 0 0;;
+    }
+}
+
+.content-title {
+    margin-bottom: 0;
+    font-size: 1.4em;
+}
+
+.reason p {
+    margin: 5em 0 1.8em;
+}
+
+/* Experience */
+.pitch::before {
+    display: block;
+    height: 4em;
+    content: "";
+    background: #002254 url("AnWeb/b7.jpg") repeat;
+}
+
+/* Feature */
+
+.features {
+    margin: 2em -1em;
+}
+
+.feature {
+    background: white;
+}
+.feature figcaption{
+    padding: 0 2em 3em;
+}
+
+@media screen and (min-width: 50em) {
+    .features {
+        -js-display:flex;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 3em auto 2em;
+        padding: 0;
+    }
+
+    .feature {
+        width: 50%;
+    }
+
+    .feature figcaption {
+        padding: 0 1.5em 3em;
+    }
+}
+
+/*CTA */
+
+.cta {
+    padding: 3em;
+    background: linear-gradient(to right, greenyellow, purple, pink);
+    text-align: center;
+}
+
+.cta a {
+    padding: 0 .5em;
+    font-size: 2em;
+    font-weight: 900;
+    color: #fffcdd;
+    text-decoration: none;
+    border: 5px solid #fffcdd;
+}
+
+@media screen and (min-width: 40em) {
+    .cta a {
+        font-size: 3em;
+        border-width: 10px;
+    }
+}
+
+.cta a:focus,
+.cta a:hover {
+    background: #fffcdd;
+    color: maroon;
+}
+
+/*--------------------------------------------------------
+Stories Styles
+--------------------------------------------------------*/
+.stories {
+    margin-bottom: 6em;
+}
+
+.story {
+    padding: 1em 2em 2em;
+}
+
+@media screen and (min-width: 50em) {
+    .story-wrapper img {
+        width: 60%!important;
+        float: left;
+    }
+    
+    .story {
+        box-sizing: border-box;
+        width: 40%;
+        float: right;
+    }
+}
+
+.flex-viewpoint{
+    background: red;
+}
+
+.flex-control-nav{
+    -js-display: flex;
+    display: flex;
+}
+
+.flex-direction-nav {
+    position: relative;
+    -js-display: flex;
+    display: flex;
+    float: right;
+    margin: 0;
+}
+
+.flex-direction-nav a {
+    position: relative;
+    opacity: 100;
+    margin: 0;
+    width: 30px;
+}
+
+.flex-direction-nav a::before {
+    font-family: inherit;
+    content: "‹";
+}
+
+.flex-direction-nav a.flex-next::before {
+    content: "›";
+}
+
+.flex-direction-nav .flex-prev {
+    left: 0;
+}
+
+.flex-direction-nav .flex-next {
+    right: 0;
+}
+
+.story-header {
+    margin-bottom: 0em;
+    font-size: 180%;
+}
+.author {
+    color: hsl(0, 0%, 45%);
+}
+
+.story p {
+    font-size: 120px;
+    font-style: italic;
+}
+
+/*-------------------------------------------------
+Footer styles
+--------------------------------------------------*/
+
+.footer {
+    padding: 3em 3em 0;
+    background: linear-gradient(to right, purple,cyan, green);
+    color: black;
+}
+
+@media screen and (min-width: 50em) {
+    .footer-widgets {
+        -js-display: flex;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .widget {
+        width: 30%;
+    }
+    
+}
+
+.widget-title {
+    font-size: 1.3em;
+}
+
+
+
+.footer-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.footer-menu a {
+    display: block;
+    padding-bottom: .5em;
+    color: #fffced;
+    text-decoration: none;
+}
+
+.footer-menu a:focus::before,
+.footer-menu a:hover::before {
+    margin-right: .5em;
+    content: "›";
+}
+
+.footer-cta a {
+    display: block;
+    margin-top: 1em;
+    padding: 0 .5em;
+    font-size: 2em;
+    font-weight: 900;
+    color: #fffcdd;
+    text-align: center;
+    text-decoration: none;
+    border: 5px solid #fffced;
+}
+
+.footer-cta a:focus,
+.footer-cta a:hover {
+    background: maroon;
+}
+
+.social-nav {
+    margin: 4em -3em 0;
+    padding: 1em 0;
+    background: maroon;
+}
+
+.social-nav ul {
+    -js-display: flex;
+    display: flex;
+    justify-content: center;
+
+    padding: 0;
+    list-style-type: none;
+}
+
+.social-nav a {
+    padding: 1em;
+}
+
+.social-nav svg {
+    width: 1.4em;
+    height: auto;
+}
+
+.social-nav path {
+    fill: #fffced;
+}
